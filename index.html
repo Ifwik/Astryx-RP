@@ -3,154 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Genesis RP - Pravidla</title>
+<title>Genesis RP</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --orange:#ff7a00;
-  --orange-soft:#ff9a3c;
-  --bg1:#0a0a0a;
-  --bg2:#000000;
-}
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:radial-gradient(circle at top,var(--bg1),var(--bg2));
-  color:white;
-  overflow-x:hidden;
-}
-
-/* NAV */
-nav{
-  display:flex;
-  align-items:center;
-  padding:15px 30px;
-  background:rgba(0,0,0,0.85);
-  border-bottom:1px solid rgba(255,122,0,0.25);
-  backdrop-filter:blur(12px);
-}
-nav h2{
-  color:var(--orange);
-  text-shadow:0 0 15px var(--orange);
-  letter-spacing:1px;
-}
-
-/* HERO */
-.hero{
-  text-align:center;
-  padding:90px 20px 70px;
-  position:relative;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at center, rgba(255,122,0,0.15), transparent 60%);
-  pointer-events:none;
-}
-.hero h1{
-  font-size:48px;
-  color:var(--orange);
-  text-shadow:0 0 30px var(--orange);
-}
-.hero p{
-  opacity:0.7;
-}
-
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:20px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:28px;
-}
-
-/* CARD */
-.rule{
-  background:rgba(255,122,0,0.05);
-  border:1px solid rgba(255,122,0,0.2);
-  padding:22px;
-  border-radius:16px;
-  transition:0.35s;
-  position:relative;
-  overflow:hidden;
-}
-
-.rule::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg, transparent, rgba(255,122,0,0.2), transparent);
-  opacity:0;
-  transition:0.4s;
-}
-
-.rule:hover::before{
-  opacity:1;
-}
-
-.rule:hover{
-  transform:translateY(-8px) scale(1.02);
-  box-shadow:0 0 35px rgba(255,122,0,0.6);
-  border-color:var(--orange);
-}
-
-.rule h3{
-  margin:0 0 10px;
-  color:var(--orange);
-  text-shadow:0 0 12px var(--orange);
-}
-
-.rule p{
-  margin:0;
-  line-height:1.65;
-  opacity:0.9;
-}
-
-/* FADE IN */
-.rule{
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeIn 0.6s forwards;
-}
-
-.rule:nth-child(n){
-  animation-delay:calc(0.04s * var(--i));
-}
-
-@keyframes fadeIn{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-footer{
-  text-align:center;
-  padding:30px;
-  opacity:0.5;
-  border-top:1px solid rgba(255,122,0,0.2);
-  margin-top:60px;
-}
+:root{--orange:#ff7a00;--orange-soft:#ff9a3c;--bg1:#0a0a0a;--bg2:#000}
+body{margin:0;font-family:'Poppins',sans-serif;background:radial-gradient(circle at top,var(--bg1),var(--bg2));color:white}
+nav{display:flex;justify-content:space-between;align-items:center;padding:15px 30px;background:rgba(0,0,0,0.85);border-bottom:1px solid rgba(255,122,0,0.25);backdrop-filter:blur(12px)}
+nav h2{color:var(--orange);text-shadow:0 0 15px var(--orange)}
+nav a{color:white;margin-left:20px;text-decoration:none;opacity:.7;transition:.3s}
+nav a:hover{opacity:1;color:var(--orange)}
+.hero{text-align:center;padding:90px 20px 70px}
+.hero h1{font-size:48px;color:var(--orange);text-shadow:0 0 30px var(--orange)}
+.container{max-width:1200px;margin:auto;padding:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+.rule{background:rgba(255,122,0,0.05);border:1px solid rgba(255,122,0,0.2);padding:22px;border-radius:16px;transition:.35s;position:relative;overflow:hidden}
+.rule:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 0 35px rgba(255,122,0,0.6);border-color:var(--orange)}
+.rule h3{margin:0 0 10px;color:var(--orange);text-shadow:0 0 12px var(--orange)}
+.rule p{margin:0;line-height:1.65;opacity:.9}
+.hidden{display:none}
+footer{text-align:center;padding:30px;opacity:.5;border-top:1px solid rgba(255,122,0,0.2);margin-top:60px}
 </style>
 </head>
 <body>
 
-<nav><h2>Genesis RP</h2></nav>
+<nav>
+<h2>Genesis RP</h2>
+<div>
+<a href="#" onclick="showPage('rules')">Pravidla</a>
+<a href="#" onclick="showPage('team')">Náš tým</a>
+</div>
+</nav>
 
-<section class="hero">
-<h1>PRAVIDLA SERVERU</h1>
-<p>Realismus • Respekt • Kvalitní RolePlay</p>
-</section>
-
-<div class="container">
-<div class="grid">
-
-<!-- obsah beze změny -->
+<!-- PRAVIDLA -->
+<div id="rulesPage">
+<section class="hero"><h1>PRAVIDLA SERVERU</h1><p>Realismus • Respekt • Kvalitní RolePlay</p></section>
+<div class="container"><div class="grid">
 
 <div class="rule"><h3><b>Znalost pravidel</b></h3><p>Každý hráč je povinen znát všechna pravidla serveru ještě před vstupem do hry. Neznalost pravidel není omluva a jakékoliv jejich porušení může vést k trestu. Hráč nese plnou odpovědnost za své chování.</p></div>
 
@@ -186,18 +73,45 @@ footer{
 
 <div class="rule"><h3><b>Gross RP</b></h3><p>Extrémní RP situace musí být vždy se souhlasem všech hráčů. Bez souhlasu je zakázáno takové RP provádět.</p></div>
 
-<div class="rule"><h3><b>/me</b></h3><p>Slouží k popisu akcí postavy. Používej ho realisticky a nevynucuj výsledky.</p></div>
+<div class="rule"><h3><b>/me</b></h3><p>Příkaz slouží k popisu akcí postavy. Používej ho realisticky a nevynucuj výsledky ostatním hráčům.</p></div>
 
-<div class="rule"><h3><b>/do</b></h3><p>Slouží k doplnění situace nebo informací, které nejsou viditelné.</p></div>
+<div class="rule"><h3><b>/do</b></h3><p>Příkaz slouží k doplnění situace nebo informací, které nejsou přímo viditelné. Pomáhá ostatním hráčům správně reagovat.</p></div>
 
-<div class="rule"><h3><b>Hood Fear</b></h3><p>Na území gangů musíš jednat opatrně. Ignorování převahy gangů je porušení RP.</p></div>
+<div class="rule"><h3><b>Hood Fear</b></h3><p>Na území gangů musíš jednat opatrně. Ignorování převahy gangů je porušení RP a může vést k následkům.</p></div>
 
 <div class="rule"><h3><b>Chování k AT</b></h3><p>Admin Team má poslední slovo. Je nutné respektovat jejich rozhodnutí, nelhat a spolupracovat při řešení situací.</p></div>
 
-</div>
+</div></div>
 </div>
 
-<footer>© 2026 Genesis RP | Ifwik</footer>
+<!-- TEAM -->
+<div id="teamPage" class="hidden">
+<section class="hero"><h1>NÁŠ TÝM</h1><p>Genesis RP Staff</p></section>
+<div class="container"><div class="grid">
+
+<div class="rule"><h3><b>Owner</b></h3><p>Xeaper</p></div>
+<div class="rule"><h3><b>Owner</b></h3><p>Chobotnak_</p></div>
+<div class="rule"><h3><b>Co-Owner</b></h3><p>Ifwik</p></div>
+<div class="rule"><h3><b>Co-Owner</b></h3><p>onďa</p></div>
+<div class="rule"><h3><b>Head of Staff</b></h3><p>Milda</p></div>
+<div class="rule"><h3><b>Staff</b></h3><p>Feaki3e</p></div>
+<div class="rule"><h3><b>Staff</b></h3><p>Domca</p></div>
+<div class="rule"><h3><b>Developer</b></h3><p>tkrado3.0</p></div>
+<div class="rule"><h3><b>Developer</b></h3><p>Kevinik</p></div>
+<div class="rule"><h3><b>Developer</b></h3><p>Tufikoss</p></div>
+
+</div></div>
+</div>
+
+<footer>© 2026 Genesis RP</footer>
+
+<script>
+function showPage(page){
+ document.getElementById('rulesPage').classList.add('hidden');
+ document.getElementById('teamPage').classList.add('hidden');
+ document.getElementById(page+'Page').classList.remove('hidden');
+}
+</script>
 
 </body>
 </html>

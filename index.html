@@ -218,7 +218,485 @@ body.fade{
 <p>Moderní RolePlay server s důrazem na kvalitu</p>
 </section>
 <div class="container"><div class="grid">
-div class="rule"><h3><b>Kdo jsme?</b></h3><p>Genesis RP, začínající FiveM server, kde každý příběh má svůj začátek.
+<div class="rule"><h3><b>Genesis RP</b></h3><p>Kvalitní RP server zaměřený na realismus a komunitu.</p></div>
+<div class="rule"><h3><b>Komunita</b></h3><p>Přátelská komunita a aktivní Admin Team.</p></div>
+<div class="rule"><h3><b>Zážitek</b></h3><p>Každý hráč si tvoří vlastní příběh.</p></div>
+</div></div>
+</div>
+
+<!-- RULES -->
+<div id="rulesPage" class="hidden">
+<section class="hero"><h1>PRAVIDLA</h1></section>
+<div class="container"><div class="grid">
+<div class="rule"><h3><b>RolePlay</b></h3><p>Jednej realisticky a drž se své postavy.</p></div>
+<div class="rule"><h3><b>Cheaty</b></h3><p>Zákaz všech cheatů a exploitů.</p></div>
+</div></div>
+</div>
+
+<!-- TEAM -->
+<div id="teamPage" class="hidden">
+<section class="hero"><h1>NÁŠ TÝM</h1></section>
+<div class="container"><div class="grid">
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis RP</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --orange:#ff7a00;
+  --orange-soft:#ff9a3c;
+  --bg1:#050505;
+  --bg2:#000000;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,var(--bg1),var(--bg2));
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:rgba(0,0,0,0.9);
+  border-bottom:1px solid rgba(255,122,0,0.3);
+  backdrop-filter:blur(14px);
+}
+
+nav h2{
+  color:var(--orange);
+  text-shadow:0 0 20px var(--orange);
+}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  opacity:.7;
+  transition:.3s;
+  position:relative;
+}
+
+nav a:hover{
+  opacity:1;
+  color:var(--orange);
+  text-shadow:0 0 10px var(--orange);
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:100px 20px 80px;
+  position:relative;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle, rgba(255,122,0,0.15), transparent 70%);
+}
+
+.hero h1{
+  font-size:50px;
+  color:var(--orange);
+  text-shadow:0 0 35px var(--orange);
+}
+
+.hero p{
+  opacity:.75;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+/* CARDS */
+.rule{
+  background:rgba(255,122,0,0.04);
+  border:1px solid rgba(255,122,0,0.2);
+  padding:22px;
+  border-radius:18px;
+  transition:.4s;
+  position:relative;
+  overflow:hidden;
+}
+
+/* ANIMATED BORDER */
+.rule::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:20px;
+  background:linear-gradient(90deg, transparent, var(--orange), transparent);
+  opacity:0;
+  z-index:0;
+  animation:borderMove 3s linear infinite;
+}
+
+@keyframes borderMove{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
+}
+
+.rule:hover::after{
+  opacity:1;
+}
+
+
+.rule::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, transparent, rgba(255,122,0,0.3), transparent);
+  opacity:0;
+  transition:.4s;
+}
+
+.rule::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  box-shadow:0 0 25px rgba(255,122,0,0.15);
+  opacity:0;
+  transition:.4s;
+}
+
+.rule:hover::before{
+  opacity:1;
+}
+
+.rule:hover::after{
+  opacity:1;
+}
+
+.rule:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 0 45px rgba(255,122,0,0.8);
+  border-color:var(--orange);
+}
+
+.rule h3{
+  margin:0 0 10px;
+  color:var(--orange);
+  text-shadow:0 0 15px var(--orange);
+}
+
+.rule p{
+  margin:0;
+  line-height:1.65;
+  opacity:.9;
+}
+
+.hidden{display:none}
+
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:.5;
+  border-top:1px solid rgba(255,122,0,0.2);
+  margin-top:60px;
+}
+
+/* ANIMACE */
+.rule{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeIn .6s forwards;
+}
+
+@keyframes fadeIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+/* PAGE FADE EFFECT */
+body.fade{
+  opacity:0;
+  transition:opacity .2s;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+<h2>Genesis RP</h2>
+<div>
+<a href="#" onclick="showPage('main')">O nás</a>
+<a href="#" onclick="showPage('rules')">Pravidla</a>
+<a href="#" onclick="showPage('team')">Náš tým</a>
+</div>
+</nav>
+
+<!-- MAIN -->
+<div id="mainPage">
+<section class="hero">
+<h1>O NÁS</h1>
+<p>Moderní RolePlay server s důrazem na kvalitu</p>
+</section>
+<div class="container"><div class="grid">
+<div class="rule"><h3><b>Genesis RP</b></h3><p>Kvalitní RP server zaměřený na realismus a komunitu.</p></div>
+<div class="rule"><h3><b>Komunita</b></h3><p>Přátelská komunita a aktivní Admin Team.</p></div>
+<div class="rule"><h3><b>Zážitek</b></h3><p>Každý hráč si tvoří vlastní příběh.</p></div>
+</div></div>
+</div>
+
+<!-- RULES -->
+<div id="rulesPage" class="hidden">
+<section class="hero"><h1>PRAVIDLA</h1></section>
+<div class="container"><div class="grid">
+<div class="rule"><h3><b>RolePlay</b></h3><p>Jednej realisticky a drž se své postavy.</p></div>
+<div class="rule"><h3><b>Cheaty</b></h3><p>Zákaz všech cheatů a exploitů.</p></div>
+</div></div>
+</div>
+
+<!-- TEAM -->
+<div id="teamPage" class="hidden">
+<section class="hero"><h1>NÁŠ TÝM</h1></section>
+<div class="container"><div class="grid">
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis RP</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --orange:#ff7a00;
+  --orange-soft:#ff9a3c;
+  --bg1:#050505;
+  --bg2:#000000;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,var(--bg1),var(--bg2));
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:rgba(0,0,0,0.9);
+  border-bottom:1px solid rgba(255,122,0,0.3);
+  backdrop-filter:blur(14px);
+}
+
+nav h2{
+  color:var(--orange);
+  text-shadow:0 0 20px var(--orange);
+}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  opacity:.7;
+  transition:.3s;
+  position:relative;
+}
+
+nav a:hover{
+  opacity:1;
+  color:var(--orange);
+  text-shadow:0 0 10px var(--orange);
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:100px 20px 80px;
+  position:relative;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle, rgba(255,122,0,0.15), transparent 70%);
+}
+
+.hero h1{
+  font-size:50px;
+  color:var(--orange);
+  text-shadow:0 0 35px var(--orange);
+}
+
+.hero p{
+  opacity:.75;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+/* CARDS */
+.rule{
+  background:rgba(255,122,0,0.04);
+  border:1px solid rgba(255,122,0,0.2);
+  padding:22px;
+  border-radius:18px;
+  transition:.4s;
+  position:relative;
+  overflow:hidden;
+}
+
+/* ANIMATED BORDER */
+.rule::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:20px;
+  background:linear-gradient(90deg, transparent, var(--orange), transparent);
+  opacity:0;
+  z-index:0;
+  animation:borderMove 3s linear infinite;
+}
+
+@keyframes borderMove{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
+}
+
+.rule:hover::after{
+  opacity:1;
+}
+
+
+.rule::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, transparent, rgba(255,122,0,0.3), transparent);
+  opacity:0;
+  transition:.4s;
+}
+
+.rule::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  box-shadow:0 0 25px rgba(255,122,0,0.15);
+  opacity:0;
+  transition:.4s;
+}
+
+.rule:hover::before{
+  opacity:1;
+}
+
+.rule:hover::after{
+  opacity:1;
+}
+
+.rule:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 0 45px rgba(255,122,0,0.8);
+  border-color:var(--orange);
+}
+
+.rule h3{
+  margin:0 0 10px;
+  color:var(--orange);
+  text-shadow:0 0 15px var(--orange);
+}
+
+.rule p{
+  margin:0;
+  line-height:1.65;
+  opacity:.9;
+}
+
+.hidden{display:none}
+
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:.5;
+  border-top:1px solid rgba(255,122,0,0.2);
+  margin-top:60px;
+}
+
+/* ANIMACE */
+.rule{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeIn .6s forwards;
+}
+
+@keyframes fadeIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+/* PAGE FADE EFFECT */
+body.fade{
+  opacity:0;
+  transition:opacity .2s;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+<h2>Genesis RP</h2>
+<div>
+<a href="#" onclick="showPage('main')">O nás</a>
+<a href="#" onclick="showPage('rules')">Pravidla</a>
+<a href="#" onclick="showPage('team')">Náš tým</a>
+</div>
+</nav>
+
+<!-- MAIN -->
+<div id="mainPage">
+<section class="hero">
+<h1>O NÁS</h1>
+<p>Moderní RolePlay server s důrazem na kvalitu</p>
+</section>
+<div class="container"><div class="grid">
+<div class="rule"><h3><b>Kdo jsme?</b></h3><p>Genesis RP, začínající FiveM server, kde každý příběh má svůj začátek.
 Jsme komunita zaměřená na kvalitní a realistický roleplay, ve které si zakládáme na přátelské atmosféře a férovém přístupu ke všem hráčům.
 Na našem serveru nezáleží na tom, jestli jsi zkušený hráč nebo úplný nováček, protože každý má u nás stejnou šanci zapojit se a vytvořit si vlastní příběh.
 Můžeš se vydat jakoukoliv cestou, ať už jako poctivý občan, podnikatel, člen záchranných složek, nebo někdo, kdo se pohybuje na hraně zákona.
@@ -249,12 +727,13 @@ Genesis RP je místo, kde začíná tvůj příběh.</p></div>
 <p>Vanilla Unicorn - volné</p>
 <p>Salieri´s Bar - volné</p>
 <p>Burger Shot - volné</p></div>
+
 </div></div>
 </div>
 
 <!-- RULES -->
 <div id="rulesPage" class="hidden">
-<section class="hero"><h1>PRAVIDLA</h1></section>
+<section class="hero"><h1>PRAVIDLA</h1><p>Profesionalita - Realismus - Respekt</p></section>
 <div class="container"><div class="grid">
 <div class="rule"><h3><b>Znalost pravidel</b></h3><p>Každý hráč je povinen znát všechna pravidla serveru ještě před vstupem do hry. Neznalost pravidel není omluva a jakékoliv jejich porušení může vést k trestu. Hráč nese plnou odpovědnost za své chování.</p></div>
 
@@ -317,7 +796,7 @@ Genesis RP je místo, kde začíná tvůj příběh.</p></div>
 <div class="rule"><h3><b>Staff</b></h3><p>Feaki3e</p></div>
 <div class="rule"><h3><b>Staff</b></h3><p>Domca</p></div>
 <div class="rule"><h3><b>Developer</b></h3><p>Kevinik</p></div>
-<div class="rule"><h3><b>Developer</b></h3><p>Tufikoss</p></div> 
+<div class="rule"><h3><b>Developer</b></h3><p>Tufikoss</p></div>   
 </div></div>
 </div>
 
@@ -330,9 +809,15 @@ function showPage(page){
   document.getElementById('mainPage').classList.add('hidden');
   document.getElementById('rulesPage').classList.add('hidden');
   document.getElementById('teamPage').classList.add('hidden');
-  document.getElementById(page+'Page').classList.remove('hidden');
+
+  const target = document.getElementById(page + 'Page');
+  if(target){
+    target.classList.remove('hidden');
+  }
+
   document.body.classList.remove('fade');
  },200);
+},200);
  return;
 }
 
@@ -348,3 +833,78 @@ showPage('main');
 
 </body>
 </html>
+
+</div></div>
+</div>
+
+<footer>© 2026 Genesis RP</footer>
+
+<script>
+function showPage(page){
+ document.body.classList.add('fade');
+ setTimeout(()=>{
+  document.getElementById('mainPage').classList.add('hidden');
+  document.getElementById('rulesPage').classList.add('hidden');
+  document.getElementById('teamPage').classList.add('hidden');
+
+  const target = document.getElementById(page + 'Page');
+  if(target){
+    target.classList.remove('hidden');
+  }
+
+  document.body.classList.remove('fade');
+ },200);
+},200);
+ return;
+}
+
+/* PAGE FADE */
+
+ document.getElementById('mainPage').classList.add('hidden');
+ document.getElementById('rulesPage').classList.add('hidden');
+ document.getElementById('teamPage').classList.add('hidden');
+ document.getElementById(page+'Page').classList.remove('hidden');
+}
+showPage('main');
+</script>
+
+</body>
+</html>
+
+</div></div>
+</div>
+
+<footer>© 2026 Genesis RP</footer>
+
+<script>
+function showPage(page){
+ document.body.classList.add('fade');
+ setTimeout(()=>{
+  document.getElementById('mainPage').classList.add('hidden');
+  document.getElementById('rulesPage').classList.add('hidden');
+  document.getElementById('teamPage').classList.add('hidden');
+
+  const target = document.getElementById(page + 'Page');
+  if(target){
+    target.classList.remove('hidden');
+  }
+
+  document.body.classList.remove('fade');
+ },200);
+},200);
+ return;
+}
+
+/* PAGE FADE */
+
+ document.getElementById('mainPage').classList.add('hidden');
+ document.getElementById('rulesPage').classList.add('hidden');
+ document.getElementById('teamPage').classList.add('hidden');
+ document.getElementById(page+'Page').classList.remove('hidden');
+}
+showPage('main');
+</script>
+
+</body>
+</html>
+
